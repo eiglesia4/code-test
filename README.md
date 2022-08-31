@@ -2,21 +2,36 @@
 
 # Coding exercise for AI-O candidates
 
-Please clone the repo, creat a new branch with your username and push your work after finished.
+Please clone the repo, creat a new branch with your username and push your work after finished IN A NEW REPO in github.
+Share with us the new repo you created so we can take a look at your work.
 
-You are provided with a dataset containing some clinical information about patients that you can find at:
+You are provided with a dataset containing some clinical information about patients that you can find in two tables:
 
-`./data/test-coding-a-data.csv`
+`./data/demographics.csv`
+`./data/measurements.csv`
 
-The task is to build a predictive model of the event "Exitus - (Death)", that is, a model that given the information of a new patient returns a probability of that patient having a future "Exitus - (Death)" event.
+## TASK 1:
 
-The data of the new patient is supposed to be provided as a file like:
+The task is to build, using python, a new table with the following structure:
 
-`./data/test-coding-a-data.csv`
+patientuid: Unique ID of a single patient.4
+age: Age in years of the patient when the **last** measurement of this patient (in measurements.csv) is available.
+sex: Sex of the patient.
+income: Income of the patient.4
+zip_code: Zip code of the patient.
+hef_1hour: average of Heart Ejection Fraction values in the **last** hour (using last measurement present for that patient as reference)
+hef_24hour: average of Heart Ejection Fraction values in the **last** 24 hours (using last measurement present for that patient as reference)
+diabetes: must be equal to the age when the first Diabetes diagnoses was registered for that patient, -99 if no Diabetes diagnosis is present for that patient.
 
-You can build the model however you want but at the end the model must be persisted and accessed by running in a terminal the script:
+Save the python code you create as a ./src/task_1.py file ready to be run from terminal with `python task_1.py`
+Save the new table as `./data/output.csv`.
 
-`./scr/predict.py`
+## Task 2:
 
-**This exercise is expected to be finished in less than 4 hours. We don't expect the highest accuracy but just to see how do you approach the ML problem and if you are able to produce ready-to-use code and work in a remote team.**
+Repeat the same exercise but now use sqlite.db as the source, create the required SQL queries running them from python script
+
+Save the python code (including SQL pieces of code) in a file named ./src/task_2.py
+Save the new table as `output` in the sqlite.db file.
+
+**This exercise is expected to be finished in less than 4 hours. We just want to see how do you approach the ETL problem and if you are able to produce ready-to-use code and work in a remote team.**
 
