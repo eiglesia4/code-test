@@ -1,4 +1,4 @@
-# code-test-a
+# code-test-b
 
 # Coding exercise for AI-O candidates
 
