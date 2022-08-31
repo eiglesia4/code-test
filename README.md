@@ -15,13 +15,13 @@ You are provided with a dataset containing some clinical information about patie
 The task is to build, using python, a new table with the following structure:
 
 ```
-patientuid: Unique ID of a single patient.4
-age: Age in years of the patient when the **last** measurement of this patient (in measurements.csv) is available.
+patientuid: Unique ID of a single patient.
+age: Age in years of the patient when the last measurement of this patient (in measurements.csv) is available.
 sex: Sex of the patient.
-income: Income of the patient.4
+income: Income of the patient.
 zip_code: Zip code of the patient.
-hef_1hour: average of Heart Ejection Fraction values in the **last** hour (using last measurement present for that patient as reference)
-hef_24hour: average of Heart Ejection Fraction values in the **last** 24 hours (using last measurement present for that patient as reference)
+hef_1hour: average of Heart Ejection Fraction values in the last hour (using last measurement present for that patient as reference)
+hef_24hour: average of Heart Ejection Fraction values in the last 24 hours (using last measurement present for that patient as reference)
 diabetes: must be equal to the age when the first Diabetes diagnoses was registered for that patient, -99 if no Diabetes diagnosis is present for that patient.
 ```
 Save the python code you create as a ./src/task_1.py file ready to be run from terminal with `python task_1.py`
