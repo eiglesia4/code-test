@@ -1,6 +1,6 @@
 # code-test-b
 
-# Coding exercise for AI-O candidates
+# Coding exercise for AIO candidates
 
 Please clone the repo, creat a new branch with your username and push your work after finished IN A NEW REPO in github.
 Share with us the new repo you created so we can take a look at your work.
