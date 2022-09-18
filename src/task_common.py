@@ -12,18 +12,24 @@ def exec_task(demo_df, measurements_df):
         if patient_data_df.empty:
             continue
         # Find the sex for this patient
-        demo_df.loc[index, 'sex'] = patient_data_df[patient_data_df['label'] == 'Sex']['value'].item()
+        sex_df = patient_data_df[patient_data_df['label'] == 'Sex']
+        if not sex_df.empty:
+            demo_df.loc[index, 'sex'] = sex_df.iloc[0]['value']
+
         # Find the age for this patient
         # THIS IS NOT ACCURATE, DUE TO NOT HAVING THE MONTH AND DAY OF BIRTH OF THE PATIENT
-        demo_df.loc[index, 'age'] = today.year - int(patient_data_df[patient_data_df['label'] == 'YOB']['value'].item())
+        age_df = patient_data_df[patient_data_df['label'] == 'YOB']
+        yob = 0
+        if not age_df.empty:
+            yob = int(age_df.iloc[0]['value'])
+            demo_df.loc[index, 'age'] = today.year - yob
         # Fill diabetes if present
         # THIS IS NOT ACCURATE, DUE TO NOT HAVING THE MONTH AND DAY OF BIRTH OF THE PATIENT
         diabetes_df = patient_data_df.loc[patient_data_df['label'] ==
                                           'Diagnosis'].loc[patient_data_df['value'] == 'Diabetes']. sort_values(
                                                                                             by='date', ascending=True)
-        if not diabetes_df.empty:
-            demo_df.loc[index, 'diabetes'] = int(diabetes_df.iloc[0]['date'].year) - \
-                                            int(patient_data_df[patient_data_df['label'] == 'YOB']['value'].item())
+        if not diabetes_df.empty and yob > 0:
+            demo_df.loc[index, 'diabetes'] = int(diabetes_df.iloc[0]['date'].year) - yob
         # Get HEF
         # Heart Ejection Fraction
         hef_df = patient_data_df.loc[patient_data_df['label'] == 'Heart Ejection Fraction'].sort_values(by='date',
