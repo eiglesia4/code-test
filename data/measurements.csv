@@ -718,7 +718,8 @@ patientuid|label|value|date
 108|Serum Na|133|2019-03-13 08:45:50
 108|CPK|936|2019-03-13 08:45:50
 108|Heart Ejection Fraction|38|2019-03-13 18:04:07
-200|Heart Ejection Fraction|45|2019-03-13 22:42:33200|Heart Ejection Fraction|55|2019-03-13 19:32:30
+200|Heart Ejection Fraction|45|2019-03-13 22:42:33
+200|Heart Ejection Fraction|55|2019-03-13 19:32:30
 259|YOB|1966|2019-03-14 01:29:39
 259|Diagnosis|Smoker|2019-03-14 01:29:39
 259|Sex|Male|2019-03-14 01:29:39
